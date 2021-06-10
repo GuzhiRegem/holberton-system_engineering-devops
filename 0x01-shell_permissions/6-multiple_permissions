@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --xr--r-- ./hello
+chmod 144 ./hello
