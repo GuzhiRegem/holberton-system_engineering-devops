@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n "" | tr : " " | grep -Ec '^\w*2\b|^\w*4\b|^\w*6\b|^\w*8\b|^\w*0\b' | cut -d " " -f1 --complement
+grep -n "" | tr : " " | grep -Ev '^\w*2\b|^\w*4\b|^\w*6\b|^\w*8\b|^\w*0\b' | cut -d " " -f1 --complement
