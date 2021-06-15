@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name *.gif -exec sh -c 'echo "${0##*/}"' {} \;
+find . -name '*.gif' -type f -printf "%f\n" | rev | cut --complement -d. -f0 | rev
