@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-END=10
-for ((i=0;i<END;i++)); do
-	echo Best School
+for i in $(seq 10); do
+	if [ "$i" -lt 11 ]
+	then
+		echo Best School
+	fi
 done
