@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-#displays Best School 10 times, but for the 9th iteration
+# displays Best School 10 times.
+VAR=0
+while [ "$VAR" -lt 10 ]; do
+	echo Best School
+	if [ "$VAR" -eq 8 ]; then
+		echo Hi
+	fi
+	((VAR += 1))
+done
