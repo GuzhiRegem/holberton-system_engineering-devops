@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
 # displays Best School 10 times.
+# shellcheck disable=SC2009
+ps -auxf | grep "bash"
