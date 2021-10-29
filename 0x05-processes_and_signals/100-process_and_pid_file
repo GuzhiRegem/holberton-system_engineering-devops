@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# 100-process_and_pid_file
+echo $$ > /var/run/myscript.pid
+trap "rm /var/run/my.pid; exit 0" SIGQUIT
+trap "echo I hate the kill command; rm /var/run/my.pid; exit 0" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+var=0
+while [ "$var" -eq 0 ]; do
+	echo "To infinity and beyond"
+done
