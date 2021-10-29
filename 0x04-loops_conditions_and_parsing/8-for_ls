@@ -2,5 +2,5 @@
 # something
 LIST="$(ls)"
 for i in $LIST; do
-	echo ${i#*-}
+	echo "${i#*-}"
 done
