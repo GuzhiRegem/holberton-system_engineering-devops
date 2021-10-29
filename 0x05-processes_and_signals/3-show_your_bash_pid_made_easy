@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # displays Best School 10 times.
-pgrep -t bash
+pgrep -tl bash
