@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# this is a script
+# displays Best School 10 times.
 for i in $(seq 10); do
 	if [ "$i" -lt 11 ]
 	then
