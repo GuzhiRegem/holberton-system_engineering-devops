@@ -1,2 +1,18 @@
 #!/usr/bin/env bash
-#displays numbers from 1 to 20
+# displays Best School 10 times.
+VAR=1
+while [ "$VAR" -le 20 ]; do
+	echo "$VAR"
+	case "$VAR" in
+		4)
+			echo bad luck from China
+			;;
+		9)
+			echo bad luck from Japan
+			;;
+		17)
+			echo bad luck from Italy
+			;;
+	esac
+	((VAR += 1))
+done
