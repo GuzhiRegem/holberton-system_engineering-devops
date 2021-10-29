@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # displays Best School 10 times.
-while [ 1 -eq 1 ]; do
+var=1
+while [ $var -eq 1 ]; do
 	echo hola
 	sleep 2
 done
