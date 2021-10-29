@@ -1,2 +1,13 @@
 #!/usr/bin/env bash
-#loops from 1 to 10
+# displays Best School 10 times.
+VAR=1
+while [ "$VAR" -le 10 ]; do
+	if [ "$VAR" -eq 4 ]; then
+		echo bad luck
+	elif [ "$VAR" -eq 8 ]; then
+		echo good luck
+	else
+		echo Best School
+	fi
+	((VAR += 1))
+done
