@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
 # something
+LIST="$(ls)"
+for i in $LIST; do
+	echo ${i#*-}
+done
