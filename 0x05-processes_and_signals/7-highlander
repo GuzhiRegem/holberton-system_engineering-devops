@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
 # displays Best School 10 times.
+var=0
+trap "echo I am invincible!!!" SIGTERM
+while [ "$var" -eq 0 ]; do
+	echo "To infinity and beyond"
+	sleep 2
+done
