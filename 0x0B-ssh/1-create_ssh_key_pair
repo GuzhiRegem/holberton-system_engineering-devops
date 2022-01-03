@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#comment
+ssh-keygen -b 4096 -f 'school' -N 'betty'
