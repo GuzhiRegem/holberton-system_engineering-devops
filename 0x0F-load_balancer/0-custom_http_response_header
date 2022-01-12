@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Redirection
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" > .tmp_file
+sudo cp .tmp_file /var/www/html/index.html 
+printf %s 'server {
+    listen 80;
+    listen [::]:80;
+    root   /var/www/html;
+    index  index.html;
+    location / {
+        add_header X-Served-By $(hostname);
+        return 200 "Hello World!";
+    }
+}' > .tmp_file
+sudo cp .tmp_file /etc/nginx/sites-available/default
+rm .tmp_file
+sudo service nginx restart
