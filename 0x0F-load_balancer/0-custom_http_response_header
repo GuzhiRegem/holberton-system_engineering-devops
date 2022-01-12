@@ -4,18 +4,19 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-echo "Hello World!" > .tmp_file
-sudo cp .tmp_file /var/www/html/index.html 
-printf %s 'server {
+INDEX_CONT='"Hello World!\n"'
+CONT="server {
     listen 80;
     listen [::]:80;
     root   /var/www/html;
     index  index.html;
     location / {
         add_header X-Served-By $(hostname);
-        return 200 "Hello World!";
+        return 200 $INDEX_CONT;
     }
-}' > .tmp_file
+}"
+echo $CONT
+echo $CONT > .tmp_file
 sudo cp .tmp_file /etc/nginx/sites-available/default
 rm .tmp_file
 sudo service nginx restart
