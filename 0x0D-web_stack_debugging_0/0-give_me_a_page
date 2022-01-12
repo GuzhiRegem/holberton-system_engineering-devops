@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# i cant belive this...
+service apache2 restart
