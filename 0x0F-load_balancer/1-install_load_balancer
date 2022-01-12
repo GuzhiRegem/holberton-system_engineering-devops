@@ -10,17 +10,17 @@ HNUM="3292"
 IP1="34.138.156.219"
 IP2="34.74.218.204"
 CONT="
-frontend http_front
-   bind *:80
-   stats uri /haproxy?stats
-   default_backend http_back
-backend http_back
-    balance roundrobin
-    server $HNUM-web-01 $IP1:80 check
-    server $HNUM-web-02 $IP2:80 check
+frontend http_front\n
+\tbind *:80\n
+\tstats uri /haproxy?stats\n
+\tdefault_backend http_back\n
+backend http_back\n
+\tbalance roundrobin\n
+\tserver $HNUM-web-01 $IP1:80 check\n
+\tserver $HNUM-web-02 $IP2:80 check\n
 "
 cp /etc/haproxy/haproxy.cfg .tmp_file
-echo $CONT >> .tmp_file
+echo -e $CONT >> .tmp_file
 sudo cp .tmp_file /etc/haproxy/haproxy.cfg
 sudo rm -r .tmp_file
-sudo service haproxy start
+sudo service haproxy restart
