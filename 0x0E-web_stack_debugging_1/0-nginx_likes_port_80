@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#comment
+cat /etc/nginx/sites-enabled/default | sed -r "s/[0-9]+ default_server;/80 default_server;/g" > .tmp_file
+sudo cp .tmp_file /etc/nginx/sites-enabled/default
+sudo service nginx restart
