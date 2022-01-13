@@ -33,7 +33,7 @@ defaults
 
 frontend Local_Server
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.guzhiregem.tech/fullchain.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.guzhiregem.tech.pem
         http-request redirect scheme https code 301 unless { ssl_fc }
         mode http
         default_backend My_Web_Servers
