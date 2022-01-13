@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#comment
+SUBS="www lb-01 web-01 web-02"
+if [ $# -lt 1 ]; then
+	echo "illegal number of parameters"
+	exit
+fi
+DOM="$1"
+if [ $# -ge 2 ]; then
+	SUBS="$2"
+fi
+for sub in $SUBS; do
+	dig "$sub.$DOM" | grep -A1 'ANSWER SECTION:' | tail -n1 > .tmp_file
+	echo -n "The subdomain $sub"
+	awk '{print " is a " $4 " record and points to " $5}' .tmp_file
+done
+rm .tmp_file
