@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
-=======
 #comment
->>>>>>> ae9e3005381877e038c4fab5381f74821726845c
 su $1 -c whoami
