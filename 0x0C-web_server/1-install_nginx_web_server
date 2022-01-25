@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#comment
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo "Hello World!" > .tmp_file
+sudo cp .tmp_file /var/www/html/index.nginx-debian.html
+sudo rm .tmp_file
+sudo service nginx restart

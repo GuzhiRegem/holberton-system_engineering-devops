@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#comment
+ln -fs /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx start
+sudo rm -r /run/nginx.pid
