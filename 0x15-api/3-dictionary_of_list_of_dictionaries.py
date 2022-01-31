@@ -32,4 +32,3 @@ if __name__ == "__main__":
         out["{}".format(user.get("id"))] = data
     with open('todo_all_employees.json', 'w', newline='') as f:
         f.write(json.dumps(out))
-
