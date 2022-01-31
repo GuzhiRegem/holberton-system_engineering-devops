@@ -5,6 +5,7 @@
 import requests
 import json
 
+
 def get_users_task(userid, username):
     request_raw = requests.get(
         'https://jsonplaceholder.typicode.com/todos?userId={}'.format(

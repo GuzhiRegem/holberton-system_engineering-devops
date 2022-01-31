@@ -21,4 +21,9 @@ if __name__ == "__main__":
     with open('{}.csv'.format(num), 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for req in request_list:
-            writer.writerow([str(num), username, req.get("completed"), req.get("title")])
+            writer.writerow([
+                str(num),
+                username,
+                req.get("completed"),
+                req.get("title")]
+                )
