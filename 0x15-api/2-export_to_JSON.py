@@ -14,7 +14,7 @@ if __name__ == "__main__":
     user_raw = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(
             num))
-    username = json.loads(user_raw.text).get("name")
+    username = json.loads(user_raw.text).get("username")
     request_list = json.loads(request_raw.text)
     tasks = []
     for a in request_list:
