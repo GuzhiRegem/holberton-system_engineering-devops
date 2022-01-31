@@ -25,4 +25,4 @@ if __name__ == "__main__":
         len(request_list)
     ))
     for a in finished:
-        print("\t {}".format(a))
+        print("\t{}".format(a))
