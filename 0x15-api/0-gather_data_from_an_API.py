@@ -16,7 +16,7 @@ if __name__ == "__main__":
     request_list = json.loads(request_raw.text)
     finished = []
     for a in request_list:
-        if a.get("userId") == sys.argv[1]:
+        if str(a.get("userId")) == sys.argv[1]:
             if a.get("completed"):
                 finished.append(a.get("title"))
     print("Employee {} is done with tasks({}/{}):".format(
