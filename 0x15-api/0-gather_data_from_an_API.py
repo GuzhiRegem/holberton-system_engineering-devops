@@ -3,7 +3,6 @@
     module
 """
 import json
-from tracemalloc import start
 import requests
 import sys
 
