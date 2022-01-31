@@ -3,28 +3,19 @@
     module
 """
 import json
+from tracemalloc import start
 import requests
 import sys
 
 if __name__ == "__main__":
-    request_raw = requests.get(
-        'https://jsonplaceholder.typicode.com/todos')
-    user_raw = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}'.format(
-            sys.argv[1]))
-    username = json.loads(user_raw.text).get("name")
-    request_list = json.loads(request_raw.text)
-    finished = []
-    count = 0
-    for a in request_list:
-        if str(a.get("userId")) == sys.argv[1]:
-            if a.get("completed"):
-                finished.append(a.get("title"))
-            count += 1
+    username = json.loads(
+        requests.get(
+            'https://jsonplaceholder.typicode.com/users/{}'.format(
+                sys.argv[1])).text).get("name")
+    req_list = json.loads(
+        requests.get(
+            "https://jsonplaceholder.typicode.com/todos/" +
+            "?userId=" + sys.argv[1]).text)
+    com = [req.get("title") for req in req_list if req.get("completed")]
     print("Employee {} is done with tasks({}/{}):".format(
-        username,
-        len(finished),
-        count
-    ))
-    for a in finished:
-        print("    ", a)
+        username, len(com), len(req_list)), *com, sep="\n\t ")
