@@ -26,5 +26,5 @@ if __name__ == "__main__":
             }
         )
     out = {"{}".format(num): tasks}
-    with open('{}.json'.format(num), 'w', newline='') as f:
+    with open('{}.json'.format(num), 'w') as f:
         f.write(json.dumps(out))
