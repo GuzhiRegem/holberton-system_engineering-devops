@@ -27,4 +27,4 @@ if __name__ == "__main__":
         count
     ))
     for a in finished:
-        print("\t {}".format(a))
+        print("\t", a)
