@@ -2,8 +2,8 @@
 """
     module
 """
-import requests
 import json
+import requests
 
 
 def get_users_task(userid, username):

@@ -2,11 +2,10 @@
 """
     module
 """
-import re
+import csv
+import json
 import requests
 import sys
-import json
-import csv
 
 if __name__ == "__main__":
     num = sys.argv[1]

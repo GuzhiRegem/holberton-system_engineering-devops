@@ -2,9 +2,9 @@
 """
     module
 """
+import json
 import requests
 import sys
-import json
 
 if __name__ == "__main__":
     num = sys.argv[1]
