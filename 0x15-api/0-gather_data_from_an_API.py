@@ -8,8 +8,7 @@ import sys
 
 if __name__ == "__main__":
     request_raw = requests.get(
-        'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
-            sys.argv[1]))
+        'https://jsonplaceholder.typicode.com/todos')
     user_raw = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(
             sys.argv[1]))
@@ -17,8 +16,9 @@ if __name__ == "__main__":
     request_list = json.loads(request_raw.text)
     finished = []
     for a in request_list:
-        if a["completed"]:
-            finished.append(a.get("title"))
+        if a.get("userId") == sys.argv[1]:
+            if a.get("completed"):
+                finished.append(a.get("title"))
     print("Employee {} is done with tasks({}/{}):".format(
         username,
         len(finished),
