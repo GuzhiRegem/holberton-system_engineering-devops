@@ -29,7 +29,7 @@ if __name__ == "__main__":
     user_list = json.loads(user_raw.text)
     out = {}
     for user in user_list:
-        data = get_users_task(user.get("id"), user.get("name"))
+        data = get_users_task(user.get("id"), user.get("username"))
         out["{}".format(user.get("id"))] = data
     with open('todo_all_employees.json', 'w', newline='') as f:
         f.write(json.dumps(out))
