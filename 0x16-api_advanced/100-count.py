@@ -14,7 +14,7 @@ def count_words(subreddit, word_list):
             "lastone": None
         }
         for word in word_list:
-            out["amounts"][word] = 0
+            out["amounts"][word.lower()] = 0
         return count_words(subreddit, out)
     url = 'https://oauth.reddit.com/r/{}/hot'.format(subreddit)
     if word_list.get("lastone") is not None:
