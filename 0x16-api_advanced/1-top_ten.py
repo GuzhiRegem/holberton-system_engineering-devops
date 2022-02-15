@@ -23,7 +23,8 @@ def top_ten(subreddit):
         headers={
             'user-Agent': 'hbtn',
             'Authorization': 'bearer {}'.format(token)
-            }
+            },
+        allow_redirects=False
     )
 
     data = response.json().get("data")
