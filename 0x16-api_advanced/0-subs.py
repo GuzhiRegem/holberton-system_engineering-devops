@@ -3,7 +3,6 @@
     module
 """
 import requests
-import json
 
 
 def number_of_subscribers(subreddit):
@@ -30,7 +29,7 @@ def number_of_subscribers(subreddit):
         headers=headers
     )
     try:
-        out = json.loads(response.text)
+        out = response.json()
         return out["data"]["subscribers"]
     except Exception:
         return 0
