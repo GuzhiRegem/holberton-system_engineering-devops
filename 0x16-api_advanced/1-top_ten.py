@@ -2,12 +2,7 @@
 """
     module
 """
-import json
 import requests
-
-from pygments import highlight
-from pygments.lexers import JsonLexer
-from pygments.formatters import TerminalFormatter
 
 
 def top_ten(subreddit):
