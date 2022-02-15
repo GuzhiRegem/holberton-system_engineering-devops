@@ -2,6 +2,7 @@
 """
     module
 """
+import json
 import requests
 
 
@@ -27,6 +28,9 @@ def top_ten(subreddit):
         allow_redirects=False
     )
 
+    if response.status_code != 200:
+        print(None)
+        return
     data = response.json().get("data")
     if data is None:
         print(None)

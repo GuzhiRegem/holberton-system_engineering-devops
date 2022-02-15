@@ -31,6 +31,8 @@ def recurse(subreddit, hot_list=[]):
         allow_redirects=False
     )
 
+    if response.status_code != 200:
+        return []
     data = response.json().get("data")
     if data is None:
         return []
